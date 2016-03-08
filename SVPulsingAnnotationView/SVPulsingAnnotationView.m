@@ -35,11 +35,11 @@
     return cachedRingLayers;
 }
 
-- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
+- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier size:(CGSize)size {
     if(self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier]) {
         self.layer.anchorPoint = CGPointMake(0.5, 0.5);
         self.calloutOffset = CGPointMake(0, 4);
-        self.bounds = CGRectMake(0, 0, 22, 22);
+        self.bounds = CGRectMake(0, 0, size.width, size.height);
         self.pulseScaleFactor = 5.3;
         self.pulseAnimationDuration = 1.5;
         self.outerPulseAnimationDuration = 3;
